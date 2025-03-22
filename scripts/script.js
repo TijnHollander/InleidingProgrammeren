@@ -22,7 +22,6 @@ coinImg.addEventListener("click", () => {
     clickSound.play();
     updateConttent();
 });
-
 function updateConttent() {
     counter.textContent = `Coins: ${Math.floor(coins)}`;
     upgrades.forEach(upgrade => {
@@ -37,7 +36,6 @@ function updateConttent() {
     });
     updatePurchaseList();
 }
-
 function buyUpgrade(upgrade) {
     upgradeSound.play();
     if (coins >= upgrade.cost) {
@@ -48,7 +46,6 @@ function buyUpgrade(upgrade) {
         updateConttent();
     }
 }
-
 function updatePurchaseList() {
     purchaseList.innerHTML = "";
     upgrades.forEach(upgrade => {
@@ -59,17 +56,14 @@ function updatePurchaseList() {
         }
     });
 }
-
 upgrades.forEach(upgrade => {
     const button = document.getElementById(upgrade.id);
     button.addEventListener("click", () => buyUpgrade(upgrade));
     button.disabled = true;
     button.textContent = `${upgrade.name} (Kosten: ${Math.floor(upgrade.cost)}) (+${upgrade.rate}/sec)`;
 });
-
 setInterval(() => {
     coins = Math.floor(coins + coinsPerSecond);
     updateConttent();
 }, 1000);
-
 updateConttent();
