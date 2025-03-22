@@ -14,8 +14,8 @@ const upgrades = [
 const counter = document.getElementById("counter");
 const coinImg = document.getElementById("Coins");
 const purchaseList = document.getElementById("purchaseList");
-const clickSound = new Audio("click.mp3");
-const upgradeSound = new Audio("upgrade.mp3");
+const clickSound = new Audio("https://TijnHollander.github.io/InleidingProgrammeren/images/click.mp3");
+const upgradeSound = new Audio("https://TijnHollander.github.io/InleidingProgrammeren/images/upgrade.mp3");
 // Geluid toegevoeg iets wat niet in de les is voorgekomen
 coinImg.addEventListener("click", () => {
     coins = Math.floor(coins + 1);
